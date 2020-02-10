@@ -9,16 +9,16 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 export class MessagePage implements OnInit {
 public messages: any;
   public sendMessageForm = new FormGroup({
-    txtchat: new FormControl('test1', Validators.compose([Validators.required])),
+    chatMessage: new FormControl('test1', Validators.compose([Validators.required])),
   });
   constructor(public message: MessagesService) { }
   ngOnInit() {
     this.loadMessages();
   }
-  sendmessage() {
-      console.log(`sendmessage ${this.sendMessageForm.value.txtchat}`);
+  sendMessage() {
+      console.log(`sendmessage ${this.sendMessageForm.value.chatMessage}`);
       this.message.sendMessage(
-          this.sendMessageForm.value.txtchat).then((res) => {
+          this.sendMessageForm.value.chatMessage).then((res) => {
         console.log('result from service login', res);
       }).catch(err => {
         console.log('error from service login', err);
