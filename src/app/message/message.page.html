@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Messages du Chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="sendMessageForm">
+        <ion-list>
+            <ion-label position="fixed">Créer Message</ion-label>
+            <ion-input formControlName="sendMessage" type="string"></ion-input>
+        
+    
+    <br>
+        <ion-button shape="round" (click)="sendMessage()">Send</ion-button>
+        </ion-list>
+    </form>
+</ion-content>
+
+
+<ion-list>
+    <ion-item *ngFor="let msg of messages">
+        <ion-text color="primary">
+            <h4>{{msg.message}}</h4>
+        </ion-text>
+        <ion-text color="secondary">
+            <p><i>{{msg.username}}</i></p>
+        </ion-text>
+        <p><i>{{msg.date | date:'HH:mm dd/MM/yyyy'}}</i></p>
+    </ion-item>
+</ion-list>
+
+

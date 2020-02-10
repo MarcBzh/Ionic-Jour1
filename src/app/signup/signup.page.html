@@ -1,7 +1,17 @@
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-title>signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content>-->
+
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      S'inscrire / Se connecter
+      M'inscrire
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,7 +21,7 @@
 
   </div>
 
-<form [formGroup]="loginForm">
+<form [formGroup]="signUpForm">
     <ion-item>
         <ion-label position="floating">Email</ion-label>
         <ion-input formControlName="username" type="email"></ion-input>
@@ -19,13 +29,14 @@
     
     <ion-item>
         <ion-label position="fixed">Password</ion-label>
-        <ion-input formControlName="password" type="password"></ion-input>
+        <ion-input type="password"></ion-input>
     </ion-item>
 
     <br>
-    <ion-button shape="round" (click)="doLogin()">Enter</ion-button>
+    <ion-button shape="round" (click)="doSignUp()">SignUp</ion-button>
+
 </form>
 
-<ion-button shape="round" (click)="doSignUp()">SignUp</ion-button>
 
 </ion-content>
+
